@@ -1,108 +1,271 @@
-import * as React from "react"
+import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
+import Head from '../components/Head.jsx'
+import Header from '../components/Header.jsx'
+import Footer from '../components/Footer.jsx'
+// import Image from '../components/Image.jsx'
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-  listStyleType: "none",
-}
-const listItemStyles = {
-  marginBottom: 12,
-  fontWeight: "300",
-  letterSpacing: 1,
-}
-const linkStyles = {
-  color: "#8954A8",
-}
+import '../scss/index/index.scss'
 
-// data
-const links = [
-  {
-    text: "Documentation",
-    url: "https://www.gatsbyjs.com/docs/",
-  },
-  {
-    text: "Tutorials",
-    url: "https://www.gatsbyjs.com/tutorial/",
-  },
-  {
-    text: "Guides",
-    url: "https://www.gatsbyjs.com/tutorial/",
-  },
-  {
-    text: "API Reference",
-    url: "https://www.gatsbyjs.com/docs/api-reference/",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-  },
-  {
-    text: "Cheat Sheet",
-    url: "https://www.gatsbyjs.com/docs/cheat-sheet/",
-  },
-]
-
-// markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site!</span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li style={listItemStyles}>
-            <a
-              style={linkStyles}
-              href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-            >
-              {link.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C13.3132 2 14.6136 2.25866 15.8268 2.7612C17.0401 3.26375 18.1425 4.00035 19.0711 4.92893C19.9997 5.85752 20.7362 6.95991 21.2388 8.17317C21.7413 9.38642 22 10.6868 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22C10.6868 22 9.38642 21.7413 8.17317 21.2388C6.95991 20.7362 5.85752 19.9997 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 9.34784 3.05357 6.8043 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2ZM12 4C8.27 4 5.14 6.55 4.25 10L14 19.75C17.45 18.86 20 15.73 20 12H14.75V13.5H18.2C17.71 15.54 16.24 17.19 14.31 17.94L6.06 9.69C7 7.31 9.3 5.63 12 5.63C14.13 5.63 16 6.67 17.18 8.28L18.41 7.22C16.95 5.26 14.63 4 12 4ZM4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C12.04 20 12.09 20 4 12Z' fill='%23663399'/%3E%3C/svg%3E%0A"
-      />
-    </main>
+    <>
+      <Head title="TOPページ" description="TOPページのディスクリプション" />
+      <div className="l-site">
+        <Header />
+        <main className="l-site-content">
+          <ol className="c-bread l-bread">
+            <li>
+              <a href="/">ホーム</a>
+            </li>
+            <li>hoge</li>
+          </ol>
+          <section className="l-section">
+            <div className="l-section-inner">
+              <h1>
+                ページ内リンク
+                <ul className="anchor-list">
+                  <li className="item">
+                    <a href="#anc-1">レスポンシブなテキスト</a>
+                  </li>
+                  <li className="item">
+                    <a href="#anc-2">トグル</a>
+                  </li>
+                  <li className="item">
+                    <a href="#anc-3">タブ</a>
+                  </li>
+                  <li className="item">
+                    <a href="#anc-4">
+                      <del>遅延読み込み画像</del>
+                      今の所StaticImageだと無理かも
+                    </a>
+                  </li>
+                  <li className="item">
+                    <a href="#anc-5">ブロックアニメーション</a>
+                  </li>
+                  <li className="item">
+                    <a href="#anc-6">スクロールアニメーション</a>
+                  </li>
+                </ul>
+              </h1>
+            </div>
+          </section>
+          <section className="l-section" id="anc-1">
+            <div className="l-section-inner">
+              <h1 className="ttl-rpw">レスポンシブなテキスト</h1>
+              <p className="txt-rpw">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </section>
+          <section className="l-section" id="anc-2">
+            <div className="l-section-inner">
+              <h1>トグル</h1>
+              <ul className="card-list">
+                <li className="item">
+                  <div className="c-toggle-content">
+                    <p>
+                      あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                    </p>
+                    <div className="js-toggle-content js-toggle-more-one">
+                      <p>
+                        またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+                      </p>
+                    </div>
+                    <button
+                      className="more-btn js-toggle-btn"
+                      data-target="js-toggle-more-one"
+                    >
+                      続きを読む
+                    </button>
+                  </div>
+                </li>
+                <li className="item">
+                  <div className="c-toggle-content">
+                    <p>
+                      あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                    </p>
+                    <div className="js-toggle-content js-toggle-more-two">
+                      <p>
+                        またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+                      </p>
+                    </div>
+                    <button
+                      className="more-btn js-toggle-btn"
+                      data-target="js-toggle-more-two"
+                    >
+                      続きを読む
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section className="l-section" id="anc-3">
+            <div className="l-section-inner">
+              <h1>タブ</h1>
+              <div className="c-tab">
+                <ul className="tab-list">
+                  <li className="item">
+                    <button className="js-tab" data-target="js-tab-content-one">
+                      tab1
+                    </button>
+                  </li>
+                  <li className="item">
+                    <button className="js-tab" data-target="js-tab-content-two">
+                      tab2
+                    </button>
+                  </li>
+                  <li className="item">
+                    <button
+                      className="js-tab"
+                      data-target="js-tab-content-three"
+                    >
+                      tab3
+                    </button>
+                  </li>
+                  <li className="item">
+                    <button
+                      className="js-tab"
+                      data-target="js-tab-content-four"
+                    >
+                      tab4
+                    </button>
+                  </li>
+                </ul>
+                <div className="tab-content js-tab-content js-tab-content-one">
+                  <p>tab content 1</p>
+                </div>
+                <div className="tab-content js-tab-content js-tab-content-two">
+                  <p>tab content 2</p>
+                </div>
+                <div className="tab-content js-tab-content js-tab-content-three">
+                  <p>tab content 3</p>
+                </div>
+                <div className="tab-content js-tab-content js-tab-content-four">
+                  <p>tab content 4</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="l-section" id="anc-4">
+            <div className="l-section-inner">
+              <h1>遅延読み込み画像</h1>
+              <ul className="photo-list">
+                <li className="item">
+                  {/* <Image fileName="img01.jpg" altText="aaaa" /> */}
+                  <StaticImage
+                    src="../images/img01.jpg"
+                    layout="fluid"
+                    maxWidth={860}
+                    alt=""
+                  />
+                </li>
+                <li className="item">
+                  <StaticImage
+                    src="../images/img02.jpg"
+                    layout="fluid"
+                    maxWidth={860}
+                    alt=""
+                  />
+                </li>
+                <li className="item">
+                  <StaticImage
+                    src="../images/img03.jpg"
+                    layout="fluid"
+                    maxWidth={860}
+                    alt=""
+                  />
+                </li>
+                <li className="item">
+                  <StaticImage
+                    src="../images/img04.jpg"
+                    layout="fluid"
+                    maxWidth={860}
+                    alt=""
+                  />
+                </li>
+                <li className="item">
+                  <StaticImage
+                    src="../images/img05.jpg"
+                    layout="fluid"
+                    maxWidth={860}
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section className="l-section" id="anc-5">
+            <div className="l-section-inner">
+              <h1>ブロックアニメーション</h1>
+              <div>
+                <div
+                  className="c-block-animation js-block-animated"
+                  data-sal=""
+                >
+                  <p>あのイーハトーヴォのすきとおった風</p>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="c-block-animation js-block-animated"
+                  data-sal=""
+                >
+                  <p>夏でも底に冷たさをもつ青いそら</p>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="c-block-animation u-p0 js-block-animated"
+                  data-sal=""
+                >
+                  <p>
+                    <img src="undefinedimg06.jpg" alt="" />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="l-section" id="anc-6">
+            <div className="l-section-inner">
+              <h1>スクロールアニメーション</h1>
+              {/* <div
+                data-sal="fade"
+                data-sal-delay="600"
+                data-sal-duration="1000"
+                data-sal-easing="ease-out-back"
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div
+                data-sal="flip-left"
+                data-sal-delay="400"
+                data-sal-duration="300"
+                data-sal-easing="ease-out-quad"
+                style="margin-top: 40px"
+              >
+                <img src="undefinedimg07.jpg" />
+              </div>
+              <div
+                data-sal="zoom-out"
+                data-sal-delay="400"
+                data-sal-duration="300"
+                data-sal-easing="ease-out-quad"
+                style="margin-top: 40px"
+              >
+                <img src="undefinedimg08.jpg" />
+              </div> */}
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
 
