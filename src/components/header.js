@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
 export const Header = () => {
@@ -8,7 +9,7 @@ export const Header = () => {
         <div className="inner">
           <div className="header-top">
             <div className="logo">
-              <a href="/">
+              <Link to="/">
                 <StaticImage
                   src="../images/logo.png"
                   width={43}
@@ -17,7 +18,7 @@ export const Header = () => {
                   alt="logo"
                 />
                 <span>ロゴ</span>
-              </a>
+              </Link>
             </div>
             <button className="nav-btn" id="js-nav-btn">
               メニューボタン
@@ -25,12 +26,12 @@ export const Header = () => {
             <div className="nav-pc">
               <ul className="nav-pc-list">
                 <li className="item">
-                  <a href="/hoge/" target="_blank">
+                  <Link to="/" target="_blank">
                     pc nav menu item 1
-                  </a>
+                  </Link>
                 </li>
                 <li className="item">
-                  <a href="/hoge/">pc nav menu item 2</a>
+                  <Link to="/">pc nav menu item 2</Link>
                 </li>
               </ul>
             </div>
@@ -38,10 +39,10 @@ export const Header = () => {
           <nav className="header-nav" id="js-nav">
             <ul className="list-main-sp">
               <li className="item">
-                <a href="/hoge/">sp humberger menu item</a>
+                <Link to="/">sp humberger menu item</Link>
               </li>
               <li className="item">
-                <a href="/">トップページ</a>
+                <Link to="/">トップページ</Link>
               </li>
             </ul>
           </nav>

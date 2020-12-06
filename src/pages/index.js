@@ -1,13 +1,30 @@
 import * as React from 'react'
+import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import Head from '../components/Head.jsx'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
-// import Image from '../components/Image.jsx'
+import { Link as AnchorLink } from 'react-scroll'
+import { useMediaQuery } from 'react-responsive'
+
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+
+import Head from '../components/head'
+import Header from '../components/header'
+import Footer from '../components/footer'
+import ToggleText from '../components/toggle-text'
+// import Image from '../components/Image'
 
 import '../scss/index/index.scss'
 
+import BlockAnimeImg from '../images/img06.jpg'
+
 const IndexPage = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 960px)',
+  })
+  const anchorLinkOptions = {
+    smooth: 'easeOutQuart',
+    duration: 800,
+    offset: isDesktopOrLaptop ? 0 : -80,
+  }
   return (
     <>
       <Head title="TOPページ" description="TOPページのディスクリプション" />
@@ -16,7 +33,7 @@ const IndexPage = () => {
         <main className="l-site-content">
           <ol className="c-bread l-bread">
             <li>
-              <a href="/">ホーム</a>
+              <Link to="/">ホーム</Link>
             </li>
             <li>hoge</li>
           </ol>
@@ -26,25 +43,35 @@ const IndexPage = () => {
                 ページ内リンク
                 <ul className="anchor-list">
                   <li className="item">
-                    <a href="#anc-1">レスポンシブなテキスト</a>
+                    <AnchorLink href="" to="anc-1" {...anchorLinkOptions}>
+                      レスポンシブなテキスト
+                    </AnchorLink>
                   </li>
                   <li className="item">
-                    <a href="#anc-2">トグル</a>
+                    <AnchorLink href="" to="anc-2" {...anchorLinkOptions}>
+                      トグル
+                    </AnchorLink>
                   </li>
                   <li className="item">
-                    <a href="#anc-3">タブ</a>
+                    <AnchorLink href="" to="anc-3" {...anchorLinkOptions}>
+                      タブ
+                    </AnchorLink>
                   </li>
                   <li className="item">
-                    <a href="#anc-4">
+                    <AnchorLink href="" to="anc-4" {...anchorLinkOptions}>
                       <del>遅延読み込み画像</del>
                       今の所StaticImageだと無理かも
-                    </a>
+                    </AnchorLink>
                   </li>
                   <li className="item">
-                    <a href="#anc-5">ブロックアニメーション</a>
+                    <AnchorLink href="" to="anc-5" {...anchorLinkOptions}>
+                      ブロックアニメーション
+                    </AnchorLink>
                   </li>
                   <li className="item">
-                    <a href="#anc-6">スクロールアニメーション</a>
+                    <AnchorLink href="" to="anc-6" {...anchorLinkOptions}>
+                      スクロールアニメーション
+                    </AnchorLink>
                   </li>
                 </ul>
               </h1>
@@ -64,40 +91,18 @@ const IndexPage = () => {
               <h1>トグル</h1>
               <ul className="card-list">
                 <li className="item">
-                  <div className="c-toggle-content">
-                    <p>
-                      あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
-                    </p>
-                    <div className="js-toggle-content js-toggle-more-one">
-                      <p>
-                        またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
-                      </p>
-                    </div>
-                    <button
-                      className="more-btn js-toggle-btn"
-                      data-target="js-toggle-more-one"
-                    >
-                      続きを読む
-                    </button>
-                  </div>
+                  <ToggleText
+                    className="c-toggle-content"
+                    text="あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
+                    moreText="またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。"
+                  />
                 </li>
                 <li className="item">
-                  <div className="c-toggle-content">
-                    <p>
-                      あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
-                    </p>
-                    <div className="js-toggle-content js-toggle-more-two">
-                      <p>
-                        またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
-                      </p>
-                    </div>
-                    <button
-                      className="more-btn js-toggle-btn"
-                      data-target="js-toggle-more-two"
-                    >
-                      続きを読む
-                    </button>
-                  </div>
+                  <ToggleText
+                    className="c-toggle-content"
+                    text="あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
+                    moreText="またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。"
+                  />
                 </li>
               </ul>
             </div>
@@ -105,53 +110,31 @@ const IndexPage = () => {
           <section className="l-section" id="anc-3">
             <div className="l-section-inner">
               <h1>タブ</h1>
-              <div className="c-tab">
-                <ul className="tab-list">
-                  <li className="item">
-                    <button className="js-tab" data-target="js-tab-content-one">
-                      tab1
-                    </button>
-                  </li>
-                  <li className="item">
-                    <button className="js-tab" data-target="js-tab-content-two">
-                      tab2
-                    </button>
-                  </li>
-                  <li className="item">
-                    <button
-                      className="js-tab"
-                      data-target="js-tab-content-three"
-                    >
-                      tab3
-                    </button>
-                  </li>
-                  <li className="item">
-                    <button
-                      className="js-tab"
-                      data-target="js-tab-content-four"
-                    >
-                      tab4
-                    </button>
-                  </li>
-                </ul>
-                <div className="tab-content js-tab-content js-tab-content-one">
-                  <p>tab content 1</p>
-                </div>
-                <div className="tab-content js-tab-content js-tab-content-two">
-                  <p>tab content 2</p>
-                </div>
-                <div className="tab-content js-tab-content js-tab-content-three">
-                  <p>tab content 3</p>
-                </div>
-                <div className="tab-content js-tab-content js-tab-content-four">
-                  <p>tab content 4</p>
-                </div>
-              </div>
+              <Tabs
+                className="c-tab"
+                selectedTabClassName="is-active"
+                selectedTabPanelClassName="is-visible"
+              >
+                <TabList className="tab-list">
+                  <Tab>Title 1</Tab>
+                  <Tab>Title 2</Tab>
+                </TabList>
+
+                <TabPanel className="tab-content">
+                  <h2>Any content 1</h2>
+                </TabPanel>
+                <TabPanel className="tab-content">
+                  <h2>Any content 2</h2>
+                </TabPanel>
+              </Tabs>
             </div>
           </section>
           <section className="l-section" id="anc-4">
             <div className="l-section-inner">
-              <h1>遅延読み込み画像</h1>
+              <h1>
+                <del>遅延読み込み画像</del>
+                今の所StaticImageだと無理かも
+              </h1>
               <ul className="photo-list">
                 <li className="item">
                   {/* <Image fileName="img01.jpg" altText="aaaa" /> */}
@@ -222,8 +205,14 @@ const IndexPage = () => {
                   data-sal=""
                 >
                   <p>
-                    <img src="undefinedimg06.jpg" alt="" />
+                    <img src={BlockAnimeImg} alt="" />
                   </p>
+                  {/* <StaticImage
+                    src="../images/img06.jpg"
+                    layout="fluid"
+                    maxWidth={860}
+                    alt=""
+                  /> */}
                 </div>
               </div>
             </div>
@@ -231,7 +220,7 @@ const IndexPage = () => {
           <section className="l-section" id="anc-6">
             <div className="l-section-inner">
               <h1>スクロールアニメーション</h1>
-              {/* <div
+              <div
                 data-sal="fade"
                 data-sal-delay="600"
                 data-sal-duration="1000"
@@ -247,19 +236,29 @@ const IndexPage = () => {
                 data-sal-delay="400"
                 data-sal-duration="300"
                 data-sal-easing="ease-out-quad"
-                style="margin-top: 40px"
+                className="u-mt40"
               >
-                <img src="undefinedimg07.jpg" />
+                <StaticImage
+                  src="../images/img07.jpg"
+                  layout="fluid"
+                  maxWidth={860}
+                  alt=""
+                />
               </div>
               <div
                 data-sal="zoom-out"
                 data-sal-delay="400"
                 data-sal-duration="300"
                 data-sal-easing="ease-out-quad"
-                style="margin-top: 40px"
+                className="u-mt40"
               >
-                <img src="undefinedimg08.jpg" />
-              </div> */}
+                <StaticImage
+                  src="../images/img08.jpg"
+                  layout="fluid"
+                  maxWidth={860}
+                  alt=""
+                />
+              </div>
             </div>
           </section>
         </main>
