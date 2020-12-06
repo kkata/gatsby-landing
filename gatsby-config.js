@@ -1,6 +1,7 @@
 const path = require(`path`)
 
 module.exports = {
+  pathPrefix: '/gatsby-landing',
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-image',

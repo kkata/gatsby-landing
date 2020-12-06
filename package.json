@@ -2,7 +2,7 @@
   "name": "gatsby-landing",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://kkata.github.io/gatsby-landing",
+  "homepage": "https://kkata.github.io/gatsby-landing/",
   "description": "My Gatsby site",
   "author": "kkata",
   "keywords": [
@@ -14,8 +14,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "license": "0BSD",
   "dependencies": {
