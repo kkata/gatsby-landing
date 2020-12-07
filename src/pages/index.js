@@ -222,8 +222,8 @@ const IndexPage = () => {
               <h1>スクロールアニメーション</h1>
               <div
                 data-sal="fade"
-                data-sal-delay="600"
-                data-sal-duration="1000"
+                data-sal-delay="900"
+                data-sal-duration="600"
                 data-sal-easing="ease-out-back"
               >
                 <p>
@@ -233,7 +233,7 @@ const IndexPage = () => {
               </div>
               <div
                 data-sal="flip-left"
-                data-sal-delay="400"
+                data-sal-delay="900"
                 data-sal-duration="300"
                 data-sal-easing="ease-out-quad"
                 className="u-mt40"
@@ -247,7 +247,7 @@ const IndexPage = () => {
               </div>
               <div
                 data-sal="zoom-out"
-                data-sal-delay="400"
+                data-sal-delay="900"
                 data-sal-duration="300"
                 data-sal-easing="ease-out-quad"
                 className="u-mt40"
