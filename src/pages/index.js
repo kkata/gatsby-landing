@@ -59,8 +59,7 @@ const IndexPage = () => {
                   </li>
                   <li className="item">
                     <AnchorLink href="" to="anc-4" {...anchorLinkOptions}>
-                      <del>遅延読み込み画像</del>
-                      今の所StaticImageだと無理かも
+                      遅延読み込み画像 (StaticImage)
                     </AnchorLink>
                   </li>
                   <li className="item">
@@ -131,10 +130,7 @@ const IndexPage = () => {
           </section>
           <section className="l-section" id="anc-4">
             <div className="l-section-inner">
-              <h1>
-                <del>遅延読み込み画像</del>
-                今の所StaticImageだと無理かも
-              </h1>
+              <h1>遅延読み込み画像(StaticImage)</h1>
               <ul className="photo-list">
                 <li className="item">
                   {/* <Image fileName="img01.jpg" altText="aaaa" /> */}
@@ -222,8 +218,8 @@ const IndexPage = () => {
               <h1>スクロールアニメーション</h1>
               <div
                 data-sal="fade"
-                data-sal-delay="900"
-                data-sal-duration="600"
+                data-sal-delay="600"
+                data-sal-duration="1000"
                 data-sal-easing="ease-out-back"
               >
                 <p>
@@ -233,7 +229,7 @@ const IndexPage = () => {
               </div>
               <div
                 data-sal="flip-left"
-                data-sal-delay="900"
+                data-sal-delay="400"
                 data-sal-duration="300"
                 data-sal-easing="ease-out-quad"
                 className="u-mt40"
@@ -247,7 +243,7 @@ const IndexPage = () => {
               </div>
               <div
                 data-sal="zoom-out"
-                data-sal-delay="900"
+                data-sal-delay="400"
                 data-sal-duration="300"
                 data-sal-easing="ease-out-quad"
                 className="u-mt40"

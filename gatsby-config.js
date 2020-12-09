@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-scroll-reveal',
       options: {
-        rootMargin: '0% 50%',
-        threshold: 1,
+        rootMargin: '0px 0px -40% 0px',
+        threshold: 0.4,
       },
     },
   ],
